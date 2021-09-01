@@ -1,0 +1,138 @@
+<div class="product_color">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-md-6 ">
+                <div class="prodcut_heading d-flex justify-content-center">
+                    <h2 class="prodcut_heading_h">My Cart</h2>
+                   
+
+                </div>
+
+            </div>
+            <div class="col-md-6 ">
+                <div class="prodcut_img">
+                    <img src="../../assets/images/banner_img.jpg" width="100%">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- cart products start -->
+<div class="container mt-5">
+<div class="row ">
+    <div class="col-12 ">
+        <table class="table table-hover" >
+            <thead class="table_head">
+                <tr >
+                    <th scope="col" class="table_heading"> Product Image</th>
+                    <th scope="col" class="table_heading">Prouduct Name</th>
+                    <th scope="col" class="table_heading">Quantity</th>
+                    <th scope="col" class="table_heading">Price</th>
+                    <th scope="col" class="table_heading">Checkout</th>
+                    <th scope="col" class="table_heading"></th>
+
+                </tr>
+            </thead>
+            <tbody  *ngFor="let cart of prodcutComponent">
+            <div></div>
+                <tr>
+                    <div class="mx-3">
+                        <td class="table_heading" ><img src="{{cart.img}}" width="100px" height="100px"> </td>
+                    </div>
+                    
+
+                    <td class="table_heading">
+                        <div class="mt-4" > {{cart.name}} </div>
+                        <div > {{cart.subject}} </div>
+                    </td>
+                    <td>
+                        <div class="mt-5" ><input type="number" value="1"> </div>
+                    </td>
+                    <td class="table_heading">
+                        <div class="mt-5" >{{cart.price}}</div>
+                    </td>
+                    <td class="table_heading">
+                        <div class="mt-5 ml-4" >
+                            <i  class="fa fa-times" style="font-size:14px;color:gray" 
+                            (click)="deleteData(cart.id)"></i>
+                       </div>
+                    </td>
+                    <td class="table_heading">
+                        <div class="mt-5 px-2"><button class="btn btn-dark" (click)="onCheckout()">Buy Now</button></div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+
+<!-- cart products end-->
+
+
+
+
+<!-- <div class="container">
+
+    <div class="row -flex align-items-center" >
+        <div class="col-12">
+            <h2>Cart</h2>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"> Product Image</th>
+                        <th scope="col">Prouduct Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Checkout</th>
+
+                    </tr>
+                </thead>
+                <tbody *ngFor="let cart of prodcutComponent">
+                
+                    <tr>
+                        <div class="mx-5">
+                            <td><img src="{{cart.img}}" width="253px" height="200px"> </td>
+                        </div>
+                        
+
+                        <td>
+                            <div class="mt-5" > {{cart.name}} </div>
+                        </td>
+                        <td>
+                            <div class="mt-5" ><input type="number" value="1"> </div>
+                        </td>
+                        <td>
+                            <div class="mt-5" >{{cart.price}}</div>
+                        </td>
+                        <td>
+                            <div class="mt-5"><button class="btn btn-danger" (click)="deleteData(cart.id)">Delete</button></div>
+                        </td>
+                        <td>
+                            <div class="mt-5"><button class="btn btn-dark" (click)="onCheckout()">Buy Now</button></div>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+<!-- 
+ <div *ngFor="let cart of prodcutComponent">
+     <h1>{{cart.img}}</h1>
+
+     <h1>{{cart.name}}</h1>
+    <h4>{{cart.subject}}</h4>
+    <h1>{{cart.price}}</h1>
+    <h1>{{cart.button}}</h1>
+ </div> -->

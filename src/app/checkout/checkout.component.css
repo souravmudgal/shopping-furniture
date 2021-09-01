@@ -1,0 +1,22 @@
+input.ng-invalid.ng-touched{
+    border-bottom: 1px solid red;
+}
+
+.Addresssection{
+    background-color: rgba(255, 255, 255, 0.849);
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 1px 2px 2px 1px;
+}
+
+.addressBox{
+    width: 40%;
+    height: 200px;
+    margin-right: 6%;
+    margin-top: 2%;
+    background-color: rgba(241, 240, 236, 0.6);
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 5px 3px 5px 2px;
+}

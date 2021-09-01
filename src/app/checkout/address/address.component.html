@@ -1,0 +1,78 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+<div class="col-6">
+    <h4>Add New Address</h4>
+</div>
+<div class="col-6">
+    <div class="d-flex justify-content-end">
+        <i class="fa fa-close" style="font-size:35px;color:red" (click)="close()"></i>
+    </div>
+   
+</div>
+    </div>
+
+<hr style="background-color: white;">  
+<div>
+    <h6>Contact Details</h6>
+    <div class="form-group">
+        <input class="form-control" formControlName="name"  type="text" name="name" placeholder="Person Name">
+        <small class="form-text text-muted" *ngIf="!signupForm.get('name')?.valid && signupForm.get('name')?.touched">
+             <span >user name is not Valid</span>
+            <!-- <span class="form-text text-muted" *ngIf="signupForm.get('name')?.errors?.required">user name is not Valid</span> -->
+            <span class="form-text text-muted" *ngIf="signupForm.get('name')?.errors?.nameISNotAllowed">user name is not
+                allowed</span>
+        </small>
+
+    </div>
+    <div class="form-group" >
+        <input class="form-control" formControlName="Contact" 
+        type="text" name="Contact"  placeholder="Contact Details"
+        (keypress)="onlyNumberAllowed($event)"
+        >
+        <span class="form-text text-muted" *ngIf="!signupForm.get('Contact')?.valid && signupForm.get('Contact')?.touched">
+            Please enter the Contact
+        </span>
+        <span class="form-text text-muted" *ngIf="signupForm.get('Contact')?.errors?.maxlength">
+            Please enter the 10 number only
+        </span>
+       
+
+    </div >
+
+</div>
+<br>
+
+  
+<div>
+    <h6> Address</h6>
+    <div class="form-group" >
+        <input class="form-control" formControlName="pincode" type="Number" name="number" placeholder="Pincode">
+    </div >
+
+    <!-- <div class="form-group" *ngFor="let gender of genders">
+        <input formControlName="gender" type="radio" name="gender" [value]="gender">
+        {{gender}}
+    </div> -->
+    <!-- <div class="form-group" formArrayName="hobbies">
+        <h4>Your Hobbies</h4>
+        <button class="btn btn-default" type="button" (click)="onAddHobby()">Add Hobby</button>
+        <div class="form-group" *ngFor="let hobby of hobbyControls; let i = index">
+            <input class="form-control" type="text" class="form-control" formControlName={{i}}>
+        </div>
+    </div> -->
+
+    <div class="form-group" >
+        <input class="form-control" formControlName="address" type="text" name="address" placeholder="Address Details">
+        <span class="form-text text-muted" *ngIf="!signupForm.get('address')?.valid && signupForm.get('address')?.touched">
+            Please enter the number
+        </span>
+    </div >
+
+</div>
+
+
+    <button class="btn btn-primary" type="submit" [disabled]="signupForm.invalid">Submit </button>
+    
+</form>
+
+

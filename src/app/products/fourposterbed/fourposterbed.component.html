@@ -1,0 +1,51 @@
+
+
+    <div class="row border border-dark no-gutters mb-3" *ngFor="let productd of  productArray" >
+        <div class="col-3 " >
+            <div class="box">
+                <img src="{{productd.img}}" width="98%" height="232px">
+                <div class="content">
+                    <!-- <i class="{{productd.icon}}"   ></i> -->
+                    <!-- <p>this is heven</p> --><br>
+                    <button class="btn btn-danger" (click)="addToCart(productd)" >Add To Cart</button>
+                </div>
+            </div>
+    
+        </div>
+    
+
+        
+            <div class="col-9">
+            <div  class="touch">
+                <div class="row"  >
+                    <div class="col-12 mt-3 ml-1">
+                        <h6>{{productd.name}}</h6>
+        
+                    </div>
+                    <div class="col-12 mt-3 ml-1">
+                        <p>{{productd.subject}}</p>
+                    </div>
+                </div>
+                
+                <div class="row d-flex justify-content-between  mx-5 my-5">
+                    <div class="col-6  ">
+                        <h6>${{productd.price}}</h6>
+        
+                    </div>
+                    <div class="col-6  ">
+                        <Button class="btn btn-dark" (click)="onCheckout()" >{{productd.button}}</Button>
+                    </div>
+                </div>
+            </div>
+               
+        
+        
+            </div>
+        
+       
+    </div>
+
+
+
+
+   
